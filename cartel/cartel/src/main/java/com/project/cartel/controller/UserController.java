@@ -94,6 +94,7 @@ public class UserController {
     public ResponseEntity<User> saveUser(@RequestBody UserRegisterDTO user){
         try{
             User u = modelMapper.map(user,User.class);
+
             User savedUser = userService.saveUser(u);
             return new ResponseEntity<>(savedUser,HttpStatus.OK);
         }catch (Exception e){
