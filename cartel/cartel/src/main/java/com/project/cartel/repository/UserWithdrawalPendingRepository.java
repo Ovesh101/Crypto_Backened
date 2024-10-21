@@ -11,7 +11,7 @@ import java.util.List;
 
 @Repository
 public interface UserWithdrawalPendingRepository extends JpaRepository<UserWithdrawalPending,Integer> {
-    @Query(value = "SELECT u FROM UserWithdrawalPending u  WHERE u.user_id =:user_id")
+    @Query(value = "SELECT u FROM UserWithdrawalPending u  WHERE u.user_id =:user_id ORDER BY u.withdrawal_date DESC ")
     public List<UserWithdrawalPending> getSinglePendingWithdrawals(@Param("user_id") int user_id);
 
 }

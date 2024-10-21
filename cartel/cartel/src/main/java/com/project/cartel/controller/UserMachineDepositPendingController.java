@@ -175,4 +175,21 @@ public class UserMachineDepositPendingController {
         }catch (Exception e){
             return new ResponseEntity<>(null,HttpStatus.BAD_REQUEST);
         }}
+
+    @DeleteMapping("/delete+pending+request/{id}")
+    public void deletePendingRequest(@PathVariable int id){
+        try{
+            System.out.println("hit url");
+            UserMachineDepositPending data = userMachineDepositPendingRepository.findById(id).orElse(null);
+            if(data != null){
+                userMachineDepositPendingRepository.deleteById(id);
+            }else{
+
+                return;
+            }
+
+        }catch (Exception e){
+            return;
+        }
+    }
 }

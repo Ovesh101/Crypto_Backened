@@ -11,6 +11,6 @@ import java.util.List;
 
 @Repository
 public interface UserInterestEarnedRepository extends JpaRepository<UserInterestEarned,Long> {
-    @Query(value = "SELECT u FROM UserInterestEarned u  WHERE u.user_id =:user_id")
+    @Query(value = "SELECT u FROM UserInterestEarned u  WHERE u.user_id =:user_id ORDER BY u.date DESC ")
     public List<UserInterestEarned> getUserInterestEarned(@Param("user_id") int user_id);
 }

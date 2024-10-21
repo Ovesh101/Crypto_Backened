@@ -11,6 +11,6 @@ import java.util.List;
 
 @Repository
 public interface UserWithdrawalSuccessRepository extends JpaRepository<UserWithdrawalSuccess,Integer> {
-    @Query(value = "SELECT u FROM UserWithdrawalSuccess u  WHERE u.user_id =:user_id")
+    @Query(value = "SELECT u FROM UserWithdrawalSuccess u  WHERE u.user_id =:user_id ORDER BY u.withdrawal_date DESC ")
     public List<UserWithdrawalSuccess> getSingleUserWithdrawals(@Param("user_id") int user_id);
 }

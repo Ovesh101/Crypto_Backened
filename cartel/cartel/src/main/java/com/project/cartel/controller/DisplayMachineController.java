@@ -51,4 +51,26 @@ public class DisplayMachineController {
             return new ResponseEntity<>(null,HttpStatus.BAD_REQUEST);
         }
     }
+
+    @PutMapping("/updatemachine")
+    public ResponseEntity<DisplayMachine> updateMachine(@RequestBody DisplayMachine newMachine){
+        try{
+            DisplayMachine oldMachine = displayMachineRepository.findById(newMachine.getMachine_id()).orElse(null);
+            if(oldMachine != null){
+                oldMachine.setMachine_name(newMachine.getMachine_name());
+                oldMachine.setPrice(newMachine.getPrice());
+                oldMachine.setValid_days(newMachine.getValid_days());
+                oldMachine.setInterest_per_day(newMachine.getInterest_per_day());
+                oldMachine.setUrl(newMachine.getUrl());
+
+                DisplayMachine savedMachine =  displayMachineRepository.save(oldMachine);
+                return new ResponseEntity<>(savedMachine,HttpStatus.OK);
+            }else{
+                return new ResponseEntity<>(null,HttpStatus.BAD_REQUEST);
+
+            }
+        }catch (Exception e){
+            return new ResponseEntity<>(null,HttpStatus.BAD_REQUEST);
+        }
+    }
 }

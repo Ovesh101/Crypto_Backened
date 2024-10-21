@@ -27,7 +27,7 @@ public class Machines {
     private String machine_name;
     private Float price;
     private int valid_days;
-    private int interest_per_day;
+    private double interest_per_day;
     private String url;
     private LocalDate start_date;
     private LocalDate end_date;

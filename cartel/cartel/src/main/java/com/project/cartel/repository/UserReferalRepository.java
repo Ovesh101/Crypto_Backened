@@ -10,6 +10,6 @@ import java.util.List;
 
 @Repository
 public interface UserReferalRepository extends JpaRepository<UserReferralAmountEarned,Integer> {
-   @Query(value = "SELECT u FROM UserReferralAmountEarned u  WHERE u.user_id =:user_id")
+   @Query(value = "SELECT u FROM UserReferralAmountEarned u  WHERE u.user_id =:user_id ORDER BY u.reffered_date DESC ")
    public List<UserReferralAmountEarned> getAllReferralsList(@Param("user_id") int user_id);
 }
