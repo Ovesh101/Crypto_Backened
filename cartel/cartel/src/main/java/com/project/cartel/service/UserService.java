@@ -121,7 +121,7 @@ public class UserService {
     }
 
 
-    @Scheduled(cron = "0 22 23 * * *",zone = "Asia/Kolkata")
+    @Scheduled(cron = "0 0 4 * * *",zone = "Asia/Kolkata")
     @Transactional
     @Async
     public CompletableFuture<String> allUsersInterestEarned(){
