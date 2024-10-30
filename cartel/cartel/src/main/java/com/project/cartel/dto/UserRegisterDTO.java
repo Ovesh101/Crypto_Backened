@@ -18,7 +18,7 @@ public class UserRegisterDTO {
         private String email;
         private String self_referral_code;
         private String invited_referral_code;
-        private double aadhaar_number;
+        private long aadhaar_number;
         private String pan_card;
         private String upi_id;
         private Long account_no;
