@@ -71,7 +71,9 @@ public class UserController {
     @GetMapping("/getSingleUser/{id}")
     public ResponseEntity<UserDTO> getSingleUserById(@PathVariable int id){
         try {
+
             User user = userRepository.findById(id).orElse(null);
+
             UserDTO userDTO = modelMapper.map(user, UserDTO.class);
             return new ResponseEntity<>(userDTO, HttpStatus.OK);
         }catch (Exception e){
