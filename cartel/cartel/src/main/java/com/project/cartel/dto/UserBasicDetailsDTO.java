@@ -19,7 +19,7 @@ public class UserBasicDetailsDTO {
     private Long  phone_number;
     private String email;
     private String self_referral_code;
-    private long aadhaar_number;
+    private String aadhaar_number;
     private String pan_card;
     private String upi_id;
     private Long account_no;

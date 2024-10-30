@@ -28,7 +28,7 @@ public class UserDTO {
     private String self_referral_code;
     private String invited_referral_code;
     private Roles role;
-    private long aadhaar_number;
+    private String aadhaar_number;
     private String pan_card;
     private String upi_id;
     private Long account_no;

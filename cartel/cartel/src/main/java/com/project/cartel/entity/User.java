@@ -26,7 +26,7 @@
         private String invited_referral_code = "";
         @Enumerated(EnumType.STRING)
         private Roles role;
-        private long aadhaar_number;
+        private String aadhaar_number;
         private String pan_card;
         private String upi_id;
         private Long account_no;
